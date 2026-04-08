@@ -4,8 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>gamareptile | Instagram, TikTok | Linktree</title>
 </head>
+
+<script>
+    function showme() {
+        //  alert("Hallo Selamat Siang");
+        Swal.fire({
+            title: "Hallo!",
+            text: "Selamat Siang!",
+            icon: "success"
+        });
+        console.log("Ini baris 18, sudah sampai di sini");
+        a = 18 + 10;
+        console.log("Hasil Penjumlahan: " + a);
+        c = 1 * 2 * 3;
+        console.log("Hasil Perkalian: " + c);
+    }
+
+    function changeText() {
+        const element = document.getElementById("intro");
+        element.innerHTML = "Sistem Informasi ITS";
+    }
+
+    function changeStyle() {
+        const element = document.getElementById("tomboll");
+        element.style.color = "red";
+        element.style.background = "yellow";
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <style>
     body {
         background-color: rgb(194, 184, 149);
@@ -68,7 +98,6 @@
         display: block;
         margin: 10px auto;
         padding: 10px;
-        width: 100%;
         max-width: 400px;
         align-items: center;
         display: flex;
@@ -111,8 +140,7 @@
         background-color: rgb(251, 255, 247);
         display: block;
         padding: 10px;
-        width: 100%;
-        max-width: 250px;
+        width: 250px;
         border-radius: 50px;
     }
 </style>
@@ -131,16 +159,16 @@
 
         <!--PROFIL N BIO-->
         <img src=" https://ugc.production.linktr.ee/5d95476a-fefc-4f14-bd84-5926d7b1ef9a_IMG-2579.jpeg?io=true&size=avatar-v3_0 " class="profil ">
-        <div class="nama ">
+        <h1 id="intro" class="nama">
             @gamareptile
-        </div>
+        </h1>
         <div class="bio ">
             👇 Leopard Gecko Dormice Breeder 👇
         </div>
 
 
         <!--TOMBOL LINK-->
-        <a href="https://www.odoo.com/typo?domain=gamareptile.odoo.com&autodbname=gamareptile&hosting=as231a.odoo.com" class="tombol" target="_blank">
+        <a id="tomboll" href="https://www.odoo.com/typo?domain=gamareptile.odoo.com&autodbname=gamareptile&hosting=as231a.odoo.com" class="tombol" target="_blank">
             <img src="https://ugc.production.linktr.ee/43ed403c-bc39-484e-960c-477f824f9de9_AVAILABLE-NOW--1-.png?io=true&size=thumbnail-stack_v1_0 " class="tombol_icon ">
             <div class="isi_Link ">
                 Ready Stock
@@ -149,6 +177,11 @@
                 ⋮
             </div>
         </a>
+
+        <button class="btn btn-primary" onclick="showme();">Show Me</button>
+        <button class="btn btn-primary" onclick="changeText();">Change Text</button>
+        <button class="btn btn-primary" onclick="changeStyle();">Change Style></button>
+
         <a href="https://api.whatsapp.com/send/?phone=%2B6285163608850&text&type=phone_number&app_absent=0" class=" tombol " target="_blank">
             <img src="https://ugc.production.linktr.ee/37b14857-750d-44d4-a5da-5f88f52007bf_Whatsapp.png?io=true&size=thumbnail-stack_v1_0 " class="tombol_icon ">
             <div class="isi_Link ">
@@ -203,6 +236,7 @@
                 ⋮
             </div>
         </a>
+
         <!--Denpasar-->
         <div class="based ">
             Based in Denpasar, Bali

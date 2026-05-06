@@ -1,0 +1,21 @@
+;/*FB_PKG_DELIM*/
+
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ *
+ * @fullSyntaxTransform
+ * @es6-async_DO_NOT_USE
+ * @generated SignedSource<<275d5f19d971ad9ae5ee5a6b148cd209>>
+ * 
+ * @nolint
+ * @oncall lexical_web_text_editor
+ * @preserve-invariant-messages
+ * @preserve-whitespace
+ * @preventMunge
+ */__d("LexicalMarkdownShortcutPlugin.prod",["LexicalComposerContext","LexicalExtension","LexicalMarkdown","react"],(function $module_LexicalMarkdownShortcutPlugin_prod(global,require,requireDynamic,requireLazy,module,exports){
+
+"use strict";var _require_closure_react;var o=_require_closure_react||(_require_closure_react=require("react"));var n=[{dependencies:[require("LexicalExtension").HorizontalRuleNode],"export":function _export(r){return require("LexicalExtension").$isHorizontalRuleNode(r)?"***":null;},regExp:/^(---|\*\*\*|___)\s?$/,replace:function replace(r,t,o,n){var l=require("LexicalExtension").$createHorizontalRuleNode();n||null!=r.getNextSibling()?r.replace(l):r.insertBefore(l),l.selectNext();},type:"element"}].concat(require("LexicalMarkdown").TRANSFORMERS);exports.DEFAULT_TRANSFORMERS=n,exports.MarkdownShortcutPlugin=function(_ref){var _ref$transformers=_ref.transformers,e=_ref$transformers===void 0?n:_ref$transformers;var _t$useLexicalComposer=require("LexicalComposerContext").useLexicalComposerContext(),l=_t$useLexicalComposer[0];return o.useEffect(function(){return require("LexicalMarkdown").registerMarkdownShortcuts(l,e);},[l,e]),null;};}),null);

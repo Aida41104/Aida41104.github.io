@@ -78,10 +78,73 @@
             transform: scale(1.05) translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
+        
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            overflow: hidden;
+            background: #fff;
+        }
+        
+        #preloader:before {
+            content: "";
+            position: fixed;
+            top: calc(50% - 30px);
+            left: calc(50% - 30px);
+            border: 6px solid #205436;
+            border-top-color: #e2e8f0;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: animate-preloader 1s linear infinite;
+        }
+        
+        .hero-with-bg {
+            position: relative;
+            background: url('assets/img/bghero.jpeg') center center no-repeat;
+            background-size: cover;
+            padding: 120px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-with-bg::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        
+        .hero-card {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        @keyframes animate-preloader {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
 <body class="index-page">
+    <!-- Preloader -->
+    <div id="preloader"></div>
     <header id="header" class="header d-flex align-items-center fixed-top" style="background-color: #205436;">
         <div class="container-fluid container-xl position-relative d-flex align-items-center">
             <a href="index.html" class="logo d-flex align-items-center me-auto">
@@ -103,73 +166,114 @@
     </header>
     <main class="main">
         <!-- Section 1: Hero Section -->
-        <section id="hero" class="hero section" style="background-color: rgb(183, 189, 165);">
+        <section id="hero" class="hero-with-bg section">
             <div class="container">
-                <div class="row gy-4">
-                    <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
-                        <h1 style="color:rgb(32, 84, 54);">Gama Reptile</h1>
-                        <p>Leopard Gecko Breeder. Est. 2023</p>
-                        <div class="d-flex">
-                            <a href="#about" class="btn-get-started" style="font-weight: 500;">Mulai Jelajah</a>
+                <div class="row justify-content-center">
+                    <div class="col-lg-11">
+
+                        <!-- kartu  ngayang -->
+                        <div class="hero-card" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="row gy-4 align-items-center">
+
+                                <!-- Kolom Teks -->
+                                <div class="col-lg-7 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                                    <h1 style="color: #205436; font-size: 52px; font-weight: 800; margin-bottom: 10px;">Gama Reptile</h1>
+                                    <p style="font-size: 20px; font-weight: 500; color: #444; margin-bottom: 30px;">Leopard Gecko Breeder. Est. 2023</p>
+
+                                    <div class="d-flex mb-4">
+                                        <a href="#about" class="btn-get-started" style="background-color: #205436 !important; color: white !important; padding: 12px 35px; border-radius: 50px; font-weight: 600; text-decoration: none;">Mulai Jelajah</a>
+                                    </div>
+
+                                    <p style="color: #666; line-height: 1.6; max-width: 550px;">
+                                        Tertarik untuk membeli atau ingin bertanya lebih lanjut? Silakan hubungi kami langsung melalui WhatsApp untuk respon cepat dan pemesanan.
+                                    </p>
+
+                                    <a href="https://api.whatsapp.com/send/?phone=6285163608850" target="_blank" style="display: inline-flex; align-items: center; width: fit-content; background:#205436; color:white; padding:12px 25px; border-radius:30px; text-decoration:none; font-weight: 600; transition: 0.3s;">
+                                        <i class="bi bi-whatsapp me-2"></i> Hubungi WhatsApp
+                                    </a>
+                                </div>
+
+                                <!--Logo -->
+                                <div class="col-lg-5 order-1 order-lg-2 d-flex justify-content-center">
+                                    <div class="logo-wrapper" style="position: relative;">
+                                        <img src="assets/img/logoGamaReptile.jpg" class="img-fluid" style="width:320px; border-radius:50%; border: 8px solid #b7bda5; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
-                        <p style="margin-top:20px; width:900px; font-size: medium;">
-                            Tertarik untuk membeli atau ingin bertanya lebih lanjut? Silakan hubungi kami langsung melalui WhatsApp untuk respon cepat dan pemesanan.
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section 2: About Section -->
+        <!-- Section: Tentang Kami (Versi Gama Reptile) -->
+        <section id="about" class="about section" style="background-color: #ffffff; padding: 80px 0;">
+            <div class="container section-title text-center" data-aos="fade-up">
+                <h2 style="color: #205436; font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700;">TENTANG KAMI</h2>
+                <div style="width: 60px; height: 3px; background-color: #b7bda5; margin: 10px auto 40px auto;"></div>
+            </div>
+
+            <div class="container">
+                <div class="row gy-4 align-items-center">
+
+                    <!-- Kolom Kiri: Poin Keunggulan -->
+                    <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+                        <p style="color: #555; font-size: 18px; margin-bottom: 25px; line-height: 1.6;">
+                            Bagi kalian yang ingin mengoleksi Leopard Gecko berkualitas atau sekadar konsultasi seputar perawatan, bisa langsung cek katalog terbaru kami.
                         </p>
 
-                        <a href="https://api.whatsapp.com/send/?phone=62123456" target="_blank" style="width:200px; margin-bottom:10px; background:#205436; color:white; padding:10px 20px; border-radius:30px; text-decoration:none;"> Hubungi WhatsApp </a>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                                <i class="bi bi-check-circle-fill" style="color: #205436; font-size: 20px; margin-right: 15px;"></i>
+                                <span style="color: #444; font-weight: 500;">Indukan Berkualitas & Morph Terjamin 100%.</span>
+                            </li>
+                            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                                <i class="bi bi-check-circle-fill" style="color: #205436; font-size: 20px; margin-right: 15px;"></i>
+                                <span style="color: #444; font-weight: 500;">Edukasi Perawatan & Konsultasi Kesehatan Gratis.</span>
+                            </li>
+                            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                                <i class="bi bi-check-circle-fill" style="color: #205436; font-size: 20px; margin-right: 15px;"></i>
+                                <span style="color: #444; font-weight: 500;">Pengiriman Aman ke Seluruh Wilayah dengan Garansi.</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-lg-6 order-1 order-lg-2 hero-img d-flex justify-content-end" data-aos="zoom-out" data-aos-delay="200">
-                        <img src="assets/img/logoGamaReptile.jpg" class="ms-md-5" style="width:300px;border-radius:50%; box-shadow:0 4px 15px rgba(0,0,0,0.2);">
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Section 2: About Section -->
-        <section id="about" class="about section">
-            <div class="container section-title" data-aos="fade-up">
-                <h2 style="color: #205436;">Tentang Kami</h2>
-            </div>
-            <div class="container" style="margin-top:-20px;">
-                <div class="row gy-4">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-6 content text-center" data-aos="fade-up" data-aos-delay="100">
-                            <p>Kami adalah spesialis pembiakan Leopard Gecko yang berbasis di Indonesia. Menyediakan berbagai morph berkualitas dengan pelayanan terpercaya sejak 2023.</p>
+                    <!-- Kolom Kanan: Deskripsi Brand -->
+                    <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+                        <div style="padding-left: 20px; border-left: 4px solid #b7bda5;">
+                            <p style="color: #444; font-size: 17px; line-height: 1.8; text-align: justify;">
+                                <strong>Gama Reptile</strong> bukan sekadar breeder biasa, tapi rumah bagi para pecinta reptil! Kami paham betul betapa pentingnya memiliki peliharaan yang sehat dengan genetika yang jelas tanpa harus merogoh kocek terlalu
+                                dalam.
+                            </p>
+                            <p style="color: #444; font-size: 17px; line-height: 1.8; text-align: justify;">
+                                Sejak didirikan pada 2023, kami selalu hadir memberikan pelayanan terbaik, mulai dari jasa fattening hingga penanganan egg binding, serta dukungan penuh bagi komunitas herpetokultur lokal.
+                            </p>
+
+                            <a href="https://www.instagram.com/gamareptile" target="_blank" style="display: inline-flex; align-items: center; margin-top: 20px; padding: 12px 30px; border: 2px solid #205436; color: #205436; text-decoration: none; font-weight: 600; border-radius: 5px; transition: 0.3s;">
+                        Kunjungi Instagram <i class="bi bi-arrow-right" style="margin-left: 10px;"></i>
+                    </a>
                         </div>
                     </div>
-                </div>
-                <!-- Postingan 1 -->
-                <div class="row gy-4 mt-4" data-aos="fade-up">
-                    <div class="col-lg-4 col-md-6">
-                        <img src="assets/img/post1.jpeg" class="img-fluid" style="width:100%; height:250px; object-fit:cover">
-                    </div>
-                    <!-- Postingan 2 -->
-                    <div class="col-lg-4 col-md-6">
-                        <img src="assets/img/post2.jpeg" class="img-fluid" style="width:100%; height:250px; object-fit:cover">
-                    </div>
-                    <!-- Postingan 3 -->
-                    <div class="col-lg-4 col-md-6">
-                        <img src="assets/img/post3.jpeg" class="img-fluid" style="width:100%; height:250px; object-fit:cover">
-                    </div>
+
                 </div>
             </div>
         </section>
-
         <!-- Section 3: barang ready-->
-        <section id="ReadyStock" style="background-color: #b7bda5; padding: 60;">
-            <div class="container section-title" data-aos="fade-up">
-                <h2 style=" color: #205436; ">Ready Stock!</h2>
-                <p style="color:#555; margin-top:10px;">
-                    Pilihan reptile dan hewan yang tersedia saat ini
-                </p>
+        <section id="ReadyStock" style=" background: url('assets/img/post3.jpeg') center center / cover no-repeat fixed; padding: 80px 0; position: relative;overflow: hidden;">
+
+            <!-- overlay-->
+            <div style="position: absolute; inset: 0; background: rgba(255, 255, 255, 0.4);z-index: 0;">
             </div>
-            <div class="container" style="margin-top:-20px;">
+
+            <div class="container" style="position: relative;z-index: 2;margin-top: -20px;">
 
                 <!-- BARIS 1 -->
                 <div class="row gy-4 ">
                     <div class="col-md-12">
                         <center>
-                            <p style="font-size:30px; font-weight: 600; color: #ffffff; background-color:rgb(32, 84, 54); ">Leopard Gecko</p>
+                            <p style="font-size:40px; font-weight: 600; color: #ffffff; background-color:rgb(32, 84, 54); ">Leopard Gecko</p>
                         </center>
                     </div>
                 </div>
@@ -207,7 +311,7 @@
                     <div class="row gy-4 ">
                         <div class="col-md-12 ">
                             <center>
-                                <p style="font-size:30px; font-weight: 600; color: #ffffff; background-color:rgb(32, 84, 54); ">Dormice</p>
+                                <p style="font-size:40px; font-weight: 600; color: #ffffff; background-color:rgb(32, 84, 54); ">Dormice</p>
                             </center>
                         </div>
                     </div>
@@ -236,13 +340,13 @@
                 </p>
             </div>
 
-            <div class="container " data-aos="fade-up " style="margin-top:-20px; ">
+            <div class="container " style="margin-top:-20px; ">
                 <div class=" row justify-content-center ">
 
                     <div class="col-lg-6 ">
 
                         <!-- SERVICE 1 -->
-                        <div class="price-box " style="margin-bottom:25px; ">
+                        <div class="price-box" data-aos="fade-up" style="margin-bottom:25px">
 
                             <div style="background:#205436; color:white; padding:12px; text-align:center; border-radius:10px 10px 0 0; font-weight:700; ">
                                 Leopard Gecko Fattening (1 Month)
@@ -267,7 +371,7 @@
                         </div>
 
                         <!-- SERVICE 2 -->
-                        <div class="price-box " style="margin-bottom:25px; ">
+                        <div class="price-box" data-aos="fade-up" data-aos-delay="100" style="margin-bottom:25px; ">
 
                             <div style="background:#205436; color:white; padding:12px; text-align:center; border-radius:10px 10px 0 0; font-weight:700; ">
                                 Leopard Gecko Treatment (1 Week)
@@ -292,7 +396,7 @@
                         </div>
 
                         <!-- SERVICE 3 -->
-                        <div class="price-box ">
+                        <div class="price-box" data-aos="fade-up" data-aos-delay="200">
                             <div style="background:#205436; color:white; padding:12px; text-align:center; border-radius:10px 10px 0 0; font-weight:700; ">
                                 Leopard Gecko Egg Binding
                             </div>
@@ -436,6 +540,17 @@
         document.addEventListener('DOMContentLoaded', function() {
             AOS.init();
         });
+    </script>
+    <script>
+        /**
+         * Preloader
+         */
+        const preloader = document.querySelector('#preloader');
+        if (preloader) {
+            window.addEventListener('load', () => {
+                preloader.remove();
+            });
+        }
     </script>
 </body>
 
